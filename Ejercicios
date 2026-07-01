@@ -1,0 +1,74 @@
+SubProceso mostrarMensajeSistemas()
+		// Ámbito Local: Esta variable solo existe aquí
+		Definir mensaje Local Como Caracter;
+		mensaje <- "Iniciando sistema... Abstracción completada.";
+		Escribir mensaje;
+FinSubProceso
+	// Definición de la función (SubProceso sin retorno)
+	proceso principal
+		//Ejecucion principal
+		escribir "llamando a la funcion por rimera vez"
+		mostrarMensajeSistemas();
+		Escribir "llamando la funcion " 
+FinProceso
+
+//ejercicio 24
+// Firma de la función: devuelve un valor (total)
+	SubProceso total <- calcularTotalVenta ( subtotal, iva )
+		Definir total Como Real;
+		total <- subtotal + (subtotal * iva);
+		// Al terminar, PSeInt implícitamente hace el "return" de la variable 'total'
+FinSubProceso
+Proceso Principal
+	Definir pagoFinal Como Real;
+	// Ejecución de la función
+	pagoFinal <- calcularTotalVenta(540000, 0.19);
+	Escribir "El total a pagar con IVA es: $", pagoFinal;
+FinProceso
+
+
+// Parámetros Formales: 'nombre' y 'edad' son los espacios vacíos [cite: 314]
+SubProceso validarIngreso ( nombre, edad )
+	Si edad >= 18 Entonces
+		Escribir "Acceso concedido a: ", nombre;
+	SiNo
+		Escribir "Acceso denegado. ", nombre, " es menor de edad.";
+	FinSi
+FinSubProceso
+Proceso Principal
+	Definir usuario Como Caracter;
+	Definir edadUsuario Como Entero;
+	usuario <- "Carlos";
+	edadUsuario <- 20;
+FinProceso
+	// Argumentos Reales: 'usuario' y 'edadUsuario' son los datos concretos [cite: 315]
+	validarIngreso(usuario, edadUsuario);
+
+
+
+// Función que recibe por VALOR (Copia)
+SubProceso modificarPorValor ( numeroCopia Por Valor )
+	numeroCopia <- numeroCopia + 50;
+	Escribir "Dentro de la función (Por Valor): ", numeroCopia;
+FinSubProceso
+
+// Función que recibe por REFERENCIA (Dirección de memoria original)
+SubProceso modificarPorReferencia ( numeroOriginal Por Referencia )
+	numeroOriginal <- numeroOriginal + 50;
+	Escribir "Dentro de la función (Por Referencia): ", numeroOriginal;
+FinSubProceso
+
+Proceso ejercicio2
+	Definir miNumero Como Entero;
+	
+	// CASO 1: Paso por Valor
+	miNumero <- 10;
+	Escribir "--- PRUEBA POR VALOR ---";
+	Escribir "Antes de la función: ", miNumero;
+	modificarPorValor(miNumero);
+	// La variable original permanece intacta 
+	Escribir "Después de la función: ", miNumero; 
+FinAlgoritmo
+
+
+
