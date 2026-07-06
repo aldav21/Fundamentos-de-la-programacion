@@ -1,0 +1,25 @@
+Algoritmo llenarmatriz
+	Dimensionar notas[3,2]
+	Definir i, j Como entero
+	Definir suma, promedio como real
+	//llenar la matriz
+	Para i <- 1 Hasta 3 hacer
+		para j <- 1 Hasta 2 Hacer
+			Escribir "Ingrese la Nota del alumno", i, "en el curso", j, ":"
+			leer notas[i, j]
+		Finpara
+	FinPara
+	//Calcular la nota Mayor y Menor
+	para i <- 1 Hasta 3 Hacer
+		para j <- 1 Hasta 2 Hacer
+			Si (notas [i, j] > 10) Entonces
+				mayor <- notas [i, j] 
+			FinSi
+			Si (notas [i, j] < menor) Entonces
+				menor <- notas [i, j] 
+			FinSi
+		FinPara
+	FinPara
+	Escribir "La mayor nota es: ", mayor
+	Escribir "La menor nota es: ", menor
+FinAlgoritmo
