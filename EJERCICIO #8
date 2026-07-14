@@ -1,0 +1,11 @@
+Algoritmo ejemplo8
+	Definir a Como entero
+	Definir p Como Real
+	p = 3.1416; 
+	
+	Escribir"Ingrese su radio";
+	Leer a;
+	
+	Escribir "Su �rea es: " p*a^2
+	
+FinAlgoritmo
